@@ -5,18 +5,13 @@
     <body>
         <div>
             <h1><a href="/">My test blog</a></h1>
-        </div>
-
-        <div>
-            <p>published: 14.04.2018, 12:12</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Какой-то текст</p>
-        </div>
-
-        <div>
-            <p>published: 14.03.2018, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>And some other text.</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}    
+        
     </body>
 </html>
